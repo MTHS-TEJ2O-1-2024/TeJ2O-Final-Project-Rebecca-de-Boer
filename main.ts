@@ -13,7 +13,16 @@ basic.clearScreen()
 basic.showIcon(IconNames.Happy)
 
 // if button a is pressed move forward
-if (input.buttonIsPressed(Button.A)) {
-    basic.showIcon(IconNames.Yes)
-    robotbit.StpCarMove(10, 48)
+ {input.onButtonPressed(Button.A, function() {
+    basic.showIcon(IconNames.Heart)
+        robotbit.StpCarMove(20, 66.4)
+        })
+ }
+
+ // if button b is pressed move backwords
+{basic.pause(1000)
+    input.onButtonPressed(Button.B, function () {
+        basic.showIcon(IconNames.Heart)
+        robotbit.StpCarMove(-20, 66.4)
+    })
 }
